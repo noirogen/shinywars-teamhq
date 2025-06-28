@@ -5,8 +5,8 @@
 This command builds a docker image with the code of this repository and runs the repository's tests
 
 ```sh
-./build_docker.sh my_app
-docker run -t my_app ./run_tests.sh
+./build_docker.sh shinywars-teamhq-web
+docker run -t shinywars-teamhq-web ./run_tests.sh
 ```
 
 ```
@@ -15,7 +15,7 @@ docker run -t my_app ./run_tests.sh
  => => transferring dockerfile: 226B                                                                           0.0s
  => [internal] load metadata for docker.io/library/node:22.14.0-alpine3.21@sha256:9bef0ef1e268f60627da9ba7d76  0.0s
  => [internal] load .dockerignore                                                                              0.0s
- => => transferring context: 154B                                                                              0.0s
+ => => transferring context: 154B                                           sd                                   0.0s
  => [1/5] FROM docker.io/library/node:22.14.0-alpine3.21@sha256:9bef0ef1e268f60627da9ba7d7605e8831d5b56ad0748  0.0s
  => [internal] load build context                                                                              0.0s
  => => transferring context: 1.07kB                                                                            0.0s
@@ -47,11 +47,11 @@ docker run -t my_app ./run_tests.sh
 
 # Running a specific test
 
-This example runs all tests matching the name "basic":
+This example runs all tests matching the name "App":
 
 ```sh
-./build_docker.sh my_app
-docker run -t my_app ./run_tests.sh basic
+./build_docker.sh shinywars-teamhq-web
+docker run -t shinywars-teamhq-web ./run_tests.sh App
 ```
 
 
@@ -59,7 +59,6 @@ docker run -t my_app ./run_tests.sh basic
 
 Run this command to enable hot reloading via docker.
 
-```sh
-./build_docker.sh my_app
-docker run --network=host -v .:/app -it my_app npm exec vite dev --host
+```
+docker-compose up --build
 ```
