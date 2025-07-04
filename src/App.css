@@ -1,18 +1,1 @@
-.app-container {
-  background-color: #1a1a2e;
-  color: #e0b0ff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, sans-serif;
-}
-
-.heading {
-  color: #be93e4;
-}
-
-.description {
-  color: #e0b0ff;
-}
+@import "tailwindcss";

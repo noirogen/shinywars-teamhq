@@ -1,7 +1,7 @@
 export default function() {
 	return (
 		<>
-			<h2>Coneheads Leaderboard</h2>
+			<h2>Error 404: Page not found</h2>
 		</>
 	)
 }

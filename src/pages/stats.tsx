@@ -1,7 +1,7 @@
 export default function() {
 	return (
 		<>
-			<h2>Coneheads Leaderboard</h2>
+			<h2>Coneheads Stats</h2>
 		</>
 	)
 }

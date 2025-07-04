@@ -9,4 +9,4 @@ COPY . .
 
 EXPOSE 5555
 
-CMD ["npm", "exec", "vite", "dev", "--host"]
+CMD ["sh"]
