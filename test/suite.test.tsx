@@ -138,4 +138,26 @@ describe("BerryTracker", () => {
 		// Verify that the harvest time is correct.
 		expect(actualHarvestTime.toISOString()).toBe(expectedHarvestTime.toISOString());
 	});
+
+	it("removes all FarmPlots when their delete buttons are clicked", () => {
+		render(<BerryTracker />);
+
+		// Confirm both plots exist initially
+		expect(screen.getByText("1")).toBeInTheDocument();
+		expect(screen.getByText("2")).toBeInTheDocument();
+
+		// Get all delete buttons
+		const deleteButtons = screen.getAllByRole("button", { name: /delete/i });
+
+		// Click each one
+		deleteButtons.forEach((btn) => fireEvent.click(btn));
+
+		// Assert both plots are now gone
+		expect(screen.queryByText("1")).not.toBeInTheDocument();
+		expect(screen.queryByText("2")).not.toBeInTheDocument();
+
+		// Assert localStorage is empty
+		const updated = JSON.parse(localStorage.getItem("farmPlots") || "[]");
+		expect(updated.length).toBe(0);
+	});
 });
