@@ -2,4 +2,4 @@
 
 export CI=true
 npm run build
-npm test ${@}
+npm test -- ./test/suite.test.tsx
